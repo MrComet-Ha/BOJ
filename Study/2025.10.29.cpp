@@ -182,6 +182,6 @@ void DIPGood()
 
 int main()
 {
-    DIPBad();
-    DIPGood();
+    //DIPBad();
+    //DIPGood();
 }
