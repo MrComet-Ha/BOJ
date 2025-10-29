@@ -69,7 +69,6 @@ void SRPTest()
 
 // 이하의 예제는 OCP를 위반함
 
-
 class Goblin
 {
     public:
@@ -118,7 +117,9 @@ class Player2
         }
     }
 };
+
 // OCP를 적용한 코드, 다형성을 활용할 생각.
+
 class Monster   // 추상클래스 선언
 {
     public :
