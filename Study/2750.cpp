@@ -10,10 +10,10 @@ int main()
     cin.tie(nullptr);
     int n;
     cin >> n;
-    vector<int> vec(n);
+    vector<int> vec(n);             // 값을 vector에 저장
     for (int i = 0; i < n; ++i)
-        cin >> vec[i];
-    sort(vec.begin(),vec.end());
+        cin >> vec[i];              // vec에 값 삽입
+    sort(vec.begin(),vec.end());    // 정렬
     for (auto i : vec)
-        cout << i << "\n";
+        cout << i << "\n";          // 출력
 }
