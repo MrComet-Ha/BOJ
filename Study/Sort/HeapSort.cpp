@@ -50,7 +50,7 @@ public:
     {
         heap.push_back(0);                                  // 인덱스 1부터 사용하기 위해 더미 값 삽입
         heap.insert(heap.end(), arr.begin(), arr.end());    // 배열의 모든 값을 힙에 삽입
-        for (int i = (heap.size() - 1) / 2; i >= 1; --i)    // 마지막 내부 노드부터 루트 노드까지 HeapDown 수행
+        for (int i = (heap.size() - 1) / 2; i >= 1; --i)    // 마지막 내부 노드부터 루트 노드까지 HeapDown으로 힙 속성 복원
             HeapDown(i);
     }
     
