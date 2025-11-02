@@ -48,26 +48,27 @@ public:
     }    
     void Initialize(const vector<int>& arr)
     {
-        heap.push_back(0);              // 인덱스 1부터 사용하기 위해 더미 값 삽입
-        for (int value : arr)
-            Insert(value);              // Insert로 삽입
+        heap.push_back(0);                                  // 인덱스 1부터 사용하기 위해 더미 값 삽입
+        heap.insert(heap.end(), arr.begin(), arr.end());    // 배열의 모든 값을 힙에 삽입
+        for (int i = (heap.size() - 1) / 2; i >= 1; --i)    // 마지막 내부 노드부터 루트 노드까지 HeapDown 수행
+            HeapDown(i);
     }
     
     void Insert(const int value)
     {
-        heap.push_back(value);          // 힙에 값을 삽입하고
-        HeapUp(heap.size() - 1);        // HeapUp을 통해 높은 값을 위로 올림
+        heap.push_back(value);                              // 힙에 값을 삽입하고
+        HeapUp(heap.size() - 1);                            // HeapUp을 통해 높은 값을 위로 올림
     }
 
     int ExtractMax()
     {
-        if (heap.size() <= 1)           // 힙이 비어있다면
-            return -1;                  // -1 반환(오류 처리)
-        int maxValue = heap[1];         // 루트 노드의 값을 최대값으로 저장
-        heap[1] = heap.back();          // 루트 노드에 마지막 노드의 값을 복사
-        heap.pop_back();                // 마지막 노드 제거
-        HeapDown(1);                    // HeapDown을 호출해 루트 노드의 값을 적절한 위치로 내림
-        return maxValue;                // 최대값 반환
+        if (heap.size() <= 1)                               // 힙이 비어있다면
+            return -1;                                      // -1 반환(오류 처리)
+        int maxValue = heap[1];                             // 루트 노드의 값을 최대값으로 저장
+        heap[1] = heap.back();                              // 루트 노드에 마지막 노드의 값을 복사
+        heap.pop_back();                                    // 마지막 노드 제거
+        HeapDown(1);                                        // HeapDown을 호출해 루트 노드의 값을 적절한 위치로 내림
+        return maxValue;                                    // 최대값 반환
     }
 };
 
