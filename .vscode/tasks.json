@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "C/C++: g++.exe 활성 파일 빌드", 
+        "type": "shell", // 셸 명령어를 사용
+        
+        "command": "g++.exe", 
+        
+        "args": [
+          "-g", 
+          "-Wall", 
+          "-std=c++17", 
+          "${file}", 
+          "-o", 
+          "${fileDirname}\\${fileBasenameNoExtension}.exe" 
+        ],
+        "options": {
+          "cwd": "${fileDirname}"
+        },
+        "problemMatcher": [
+          "$gcc" 
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true 
+        }
+      }
+    ]
+  }
